@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>test table merge split resize</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.js"></script>
+    <link href="./index.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id="app">
+      {{message}}
+      <div class="tools" v-if="selectTd.length">
+        <span @click="verticalSplit">垂直拆分</span>
+        <span @click="horizontalSplit">水平拆分</span>
+        <span v-if="selectTd.length > 1">合并单元格</span>
+      </div>
+      <table>
+        <colgroup>
+          <col v-for="(item, index) in col" :key="index" :style="{width: item}"/>
+        </colgroup>
+        <tbody>
+          <tr v-for="(tr, index) in table" :key="index" :style="{height: trStyle[index]}">
+            <td v-for="(td, jindex) in tr" :key="jindex" :colspan="td.colspan" :rowspan="td.rowspan">
+              {{index + 1}} - {{jindex + 1}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="./index.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
