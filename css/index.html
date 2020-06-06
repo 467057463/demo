@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>background-origin study</title>
+  <style>
+    body{
+      background: #222;
+      padding: 0;
+      margin: 0;
+    }
+    .box{
+      width: 500px;
+      height: 500px;
+      background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591289837153&di=54db587a8f7957fbcfe164689819534f&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D3571592872%2C3353494284%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1200%26h%3D1290),
+      url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591376630808&di=08b17eeed873e1d1c8ef77ddebc26cf7&imgtype=0&src=http%3A%2F%2Ft7.baidu.com%2Fit%2Fu%3D3204887199%2C3790688592%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D4610%26h%3D2968);
+      background-size: 30%, 100%;
+      border: 10px dashed red;
+      padding: 10px;
+      background-origin: content-box;
+      background-repeat: no-repeat, repeat;
+      background-clip: content-box;
+      background-position: center, left;
+      overflow: auto;
+      /* display: flex; */
+      /* justify-content: center; */
+      /* align-items: center; */
+    }
+    .content{
+      /* flex: 1; */
+      height: 3000px;
+      background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1591376630808&di=08b17eeed873e1d1c8ef77ddebc26cf7&imgtype=0&src=http%3A%2F%2Ft7.baidu.com%2Fit%2Fu%3D3204887199%2C3790688592%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D4610%26h%3D2968);
+      background-color: rgba(255, 255, 255, 0.3);
+      background-attachment: fixed;
+      border-radius: 5px;
+      font-family: sans-serif;
+      text-align: center;
+      line-height: 1; 
+      backdrop-filter: blur(2px);  
+      padding: 20px 40px;
+      /* background: red; */
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="content">ssss</div>
+  </div>
+</body>
+</html>
