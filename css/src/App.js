@@ -1,9 +1,13 @@
 import React from 'react';
+import back from './images/back.jpg';
+
 
 function App() {
   return (
     <div className="App">
-      <div className="box">六尺巷范德萨</div>
+      <div className="box">
+        <img src={back}/>
+      </div>
     </div>
   );
 }
