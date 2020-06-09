@@ -7,21 +7,11 @@ body{
 
 .box{
   width: 500px;
-  // width: 300px;
-  // height: 300px;
-  column-count: 2;
-  column-width: 100px;
-  column-gap: 20px;
-  column-rule: red thin solid;
-  column-fill: balance;
-  .div1{
-    // width: 100px;
-    // position: absolute;
-  }
-  h1{
-    column-span: all;    
-  }
-  p{
-    background: #eee;
-  }
+  height: 500px;
+  // border-radius: 50%;
+  // background: conic-gradient(white, 45deg, deepskyblue 90deg);
+  // background: conic-gradient(from 20deg, yellowgreen 0deg 120deg, gold 120deg 240deg, deepskyblue 0deg);
+  // background: radial-gradient(closest-side, gray, transparent),
+  //             conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
+  background: conic-gradient(#eee 25%, white 0deg 50%, #eee 0deg 75%, white 0deg) 0 / 20px 20px;
 }
