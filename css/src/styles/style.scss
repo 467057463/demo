@@ -13,5 +13,6 @@ body{
   // background: conic-gradient(from 20deg, yellowgreen 0deg 120deg, gold 120deg 240deg, deepskyblue 0deg);
   // background: radial-gradient(closest-side, gray, transparent),
   //             conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
-  background: conic-gradient(#eee 25%, white 0deg 50%, #eee 0deg 75%, white 0deg) 0 / 20px 20px;
+  // background: conic-gradient(#eee 25%, white 0deg 50%, #eee 0deg 75%, white 0deg) 0 / 20px 20px;
+  background: url('../images/back.jpg') 0 / 50px 50px;
 }
