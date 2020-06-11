@@ -8,11 +8,53 @@ body{
 .box{
   width: 500px;
   height: 500px;
-  // border-radius: 50%;
+  border-radius: 50%;
   // background: conic-gradient(white, 45deg, deepskyblue 90deg);
   // background: conic-gradient(from 20deg, yellowgreen 0deg 120deg, gold 120deg 240deg, deepskyblue 0deg);
   // background: radial-gradient(closest-side, gray, transparent),
   //             conic-gradient(red, magenta, blue, aqua, lime, yellow, red);
   // background: conic-gradient(#eee 25%, white 0deg 50%, #eee 0deg 75%, white 0deg) 0 / 20px 20px;
-  background: url('../images/back.jpg') 0 / 50px 50px;
+  // background: url('../images/back.jpg') 0 / 50px 50px;
+  background: conic-gradient(
+    deepskyblue 20deg, 
+    white 0 40deg,
+    deepskyblue 0 60deg, 
+    white 0 80deg,
+    deepskyblue 0 100deg, 
+    white 0 120deg,
+    deepskyblue 0 140deg, 
+    white 0 160deg,
+    deepskyblue 0 180deg, 
+    white 0 200deg,
+    deepskyblue 0 220deg, 
+    white 0 240deg,
+    deepskyblue 0 260deg, 
+    white 0 280deg,
+    deepskyblue 0 300deg, 
+    white 0 320deg,
+    deepskyblue 0 340deg, 
+  );
+  // --mask: radial-gradient(closest-side, transparent 75%, black 76%);
+  // -webkit-mask-image: var(--mask);
+  // mask-image: var(--mask);
+  // animation: spin 1s linear infinite;
+}
+
+@keyframes spin{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.level1 {
+  counter-reset: level1;
+}
+.level1-item {
+  counter-increment: level1 2; /* counter-increment写到伪类的选择器中也是可以的 */
+}
+.level1-item:before {
+  content: 'step' counter(level1) '.';
 }
