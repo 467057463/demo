@@ -1,16 +1,33 @@
 import React from 'react';
-import back from './images/back.jpg';
+import {
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom';
+
+import Home from './pages/Home';
+import Grid from './pages/Grid';
 
 
 function App() {
   return (
-    <div className="App">
-      <div className="box">       
-      </div>
-      <div class="level1">
-        <div class="level1-item">foo</div>
-        <div class="level1-item">bar</div>
-      </div>
+    <div className="app">
+      <nav>
+      <ul>
+          <li>
+            <Link to="/">首页</Link>
+          </li>
+        </ul>
+      </nav>
+      
+      <Switch>        
+        <Route path="/grid">
+          <Grid/>
+        </Route>
+        <Route path="/">
+          <Home/>
+        </Route>
+      </Switch>
     </div>
   );
 }

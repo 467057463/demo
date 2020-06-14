@@ -1,0 +1,24 @@
+.grid{
+  background: #eee;
+  // width: 500px;
+  height: 500px;
+  display: grid;
+  // grid-template-columns: repeat(auto-fill, 80px);
+  grid-template-columns: [第一条纵线] 100px [第二条纵线] 100px 100px;
+  grid-template-rows: repeat(3, 33.33%);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  grid-auto-columns: 50px;
+  grid-auto-rows: 50px;
+  // justify-items: end;
+  div{
+    background: yellow;
+  }
+  div:nth-child(1){
+    background: red;
+    grid-column-start: 第二条纵线;
+    grid-column-end: span 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
