@@ -10,6 +10,12 @@ function Home(){
         <li>
           <Link to="/grid">css grid</Link>
         </li>
+        <li>
+          <Link to="/line-height">line-height</Link>
+        </li>
+        <li>
+          <Link to="/gradient">gradient css渐变</Link>
+        </li>
       </ul>
     </div>
   )

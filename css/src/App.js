@@ -7,6 +7,8 @@ import {
 
 import Home from './pages/Home';
 import Grid from './pages/Grid';
+import LineHeight from './pages/LineHeight';
+import Gradient from './pages/Gradient';
 
 
 function App() {
@@ -23,6 +25,12 @@ function App() {
       <Switch>        
         <Route path="/grid">
           <Grid/>
+        </Route>
+        <Route path="/line-height">
+          <LineHeight/>
+        </Route>
+        <Route path="/gradient">
+          <Gradient/>
         </Route>
         <Route path="/">
           <Home/>
