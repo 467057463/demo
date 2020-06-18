@@ -16,6 +16,12 @@ function Home(){
         <li>
           <Link to="/gradient">gradient css渐变</Link>
         </li>
+        <li>
+          <Link to="/object-fit">object-fit</Link>
+        </li>
+        <li>
+          <Link to="/word-break">word-break、word-wrap、white-space</Link>
+        </li>
       </ul>
     </div>
   )

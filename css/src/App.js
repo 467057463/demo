@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import Grid from './pages/Grid';
 import LineHeight from './pages/LineHeight';
 import Gradient from './pages/Gradient';
+import ObjectFit from './pages/ObjectFit';
+import WordBreak from './pages/WordBreak';
 
 
 function App() {
@@ -22,7 +24,13 @@ function App() {
         </ul>
       </nav>
       
-      <Switch>        
+      <Switch>   
+        <Route path="/word-break">
+          <WordBreak/>
+        </Route>    
+        <Route path="/object-fit">
+          <ObjectFit/>
+        </Route>     
         <Route path="/grid">
           <Grid/>
         </Route>
