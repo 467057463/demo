@@ -42,4 +42,45 @@
       #800880 85.71%,
     )
   }
+  .test-4{
+    width: 500px;
+    height: 500px;
+    background-image: radial-gradient(
+      closest-side circle, 
+      yellow,
+      yellow 33.33%, 
+      orange 33.33%, 
+      orange 66.66%, 
+      red 66.66%, 
+      red 100%, 
+      white,
+    );
+  }
+  .test-5{
+    width: 500px;
+    height: 500px;
+    background-image: radial-gradient(
+      50px 250px ellipse,
+      transparent 40px,
+      yellow 42px,
+      red
+    ),
+    radial-gradient(
+      30px circle,
+      red,
+      red 29px,
+      transparent 30px,
+    );
+  }
+  .test-6{
+    width: 500px;
+    height: 500px;
+    background-image: repeating-linear-gradient(
+      to right,
+      red 0,
+      red 50px,
+      blue 0,
+      blue 200px,
+    );
+  }
 }

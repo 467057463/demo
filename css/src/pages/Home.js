@@ -22,6 +22,9 @@ function Home(){
         <li>
           <Link to="/word-break">word-break、word-wrap、white-space</Link>
         </li>
+        <li>
+          <Link to="/clip">clip</Link>
+        </li>
       </ul>
     </div>
   )
