@@ -8,6 +8,9 @@ function Home(){
     <div className="home">
       <ul>
         <li>
+          <Link to="/topics">topics</Link>
+        </li>
+        <li>
           <Link to="/grid">css grid</Link>
         </li>
         <li>
