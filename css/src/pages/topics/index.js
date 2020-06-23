@@ -1,17 +1,13 @@
 import React from 'react';
-
-import Topic from './topic';
+import { renderRoutes } from "react-router-config";
 
 import { 
   Link, 
   useRouteMatch,
-  Route,
-  Switch
 } from 'react-router-dom';
 
-function Topics(){
+function Topics({ route }){
   const math = useRouteMatch();
-  console.log(math)
   return(
     <div className="topics">
       <h2>topics</h2>
@@ -23,14 +19,7 @@ function Topics(){
           <Link to={`${math.url}/111`}>show</Link>
         </li>
       </ul>
-      <Switch>
-        <Route path="/topics/:id">
-          <Topic/>
-        </Route>
-        <Route path={math.path}>
-          <h3>topics index</h3>
-        </Route>
-      </Switch>
+      {renderRoutes(route.routes)}
     </div>
   )
 }

@@ -1,4 +1,6 @@
 const path = require('path');
+const resolve = dir => path.resolve(__dirname, dir);
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -14,6 +16,11 @@ module.exports = {
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: path.resolve(__dirname, '/')
+  },
+  resolve: {
+    alias: {
+      '@': resolve('src')
+    }
   },
   devtool: 'inline-source-map',
   module: {
