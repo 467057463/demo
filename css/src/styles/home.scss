@@ -1,0 +1,25 @@
+.home{
+  --color: red;
+  // --pad:
+  --bar: 'hellow';
+  --fot: var(bar) ' world';
+  .box{
+    // text-decoration: wavy;
+    // white-space: pre;
+    // tab-size: 100px;
+    padding: var(--pad, 10px 20px);
+    color: var(--color);
+    text-align: justify;
+    font-size: 32px;
+    text-decoration: underline yellow;
+    // writing-mode: vertical-rl;
+    &:after{
+      content: var(--fot);
+    }
+  }
+  // span.emphasis{
+  //   text-emphasis-color: red;
+  //   text-emphasis-style:  open dot;
+  //   text-emphasis-position: under left;
+  // }
+}

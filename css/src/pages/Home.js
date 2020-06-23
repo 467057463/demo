@@ -26,6 +26,9 @@ function Home(){
           <Link to="/clip">clip</Link>
         </li>
       </ul>
+      <div className="box">
+        宝贝，<span className="emphasis">爱你比心</span>
+      </div>
     </div>
   )
 }
