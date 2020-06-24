@@ -1,6 +1,6 @@
 import loadable from "@loadable/component";
 
-const routes = [
+const routes: any = [
   {
     path: '/',
     exact: true,

@@ -1,11 +1,8 @@
 import React from 'react';
 import { renderRoutes } from "react-router-config";
+import { Link } from 'react-router-dom';
+
 import routes from './routers';
-
-import {
-  Link
-} from 'react-router-dom';
-
 
 function App() {
   return (
