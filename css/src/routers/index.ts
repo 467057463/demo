@@ -1,6 +1,15 @@
 import loadable from "@loadable/component";
 
-const routes: any = [
+import { RouteConfig } from "react-router-config";
+
+// interface Route {
+//   path: string;
+//   component: JSX.Element;
+//   exact?: boolean;
+//   routes?: Array<Route>;
+// }
+
+const routes: RouteConfig[]= [
   {
     path: '/',
     exact: true,
