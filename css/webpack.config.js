@@ -33,14 +33,14 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/,
-        use:[
+        use: [
           // 'style-loader',
           MiniCssExtractPlugin.loader,
           'css-loader',
           {
             loader: 'postcss-loader',
             options: {
-              plugins(){
+              plugins() {
                 return [
                   precss,
                   autoprefixer
@@ -59,7 +59,7 @@ module.exports = {
       }
     ]
   },
-  plugins:[
+  plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[name].css',
