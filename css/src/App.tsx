@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderRoutes } from "react-router-config";
+import { renderRoutes } from 'react-router-config';
 import { Link } from 'react-router-dom';
 
 import routes from './routers';
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="app">
       <nav>
-      <ul>
+        <ul>
           <li>
             <Link to="/">首页</Link>
             <Link to="/topics">topics</Link>
