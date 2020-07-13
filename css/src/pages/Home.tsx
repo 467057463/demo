@@ -1,47 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-let name: String = 'mma';
+const ThemeContent = React.createContext('light');
 
-interface Prop {
-  title: string;
-  children?: React.ReactNode;
-}
-
-function Element({ title, children }: Prop) {
-  return (
-    <div>
-      <h1>{title}</h1>
-      <p>ssssss</p>
-    </div>
-  );
-}
-
-class Clock extends React.Component {
-  public constructor(props: any) {
-    super(props);
-    this.state = { date: new Date() };
-    this.timerId = null;
-  }
-  public componentDidMount() {
-    this.timerId = setInterval(() => this.ticker(), 1000);
-  }
-  public componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
-  public ticker() {
-    this.setState({
-      date: new Date()
-    });
-  }
+class Toolbar extends React.Component {
+  public static contextType = ThemeContent;
   public render() {
-    return (
-      <div>
-        <h2>hello</h2>
-        <p>{this.state.date.toLocaleTimeString()}</p>
-      </div>
-    );
+    console.log(this);
+    return <div>ssss</div>;
   }
+}
+
+console.log(ThemeContent);
+
+function Content() {
+  return (
+    <ThemeContent.Consumer>
+      {(value) => <div>{value}</div>}
+    </ThemeContent.Consumer>
+  );
 }
 
 function Home() {
@@ -70,14 +47,11 @@ function Home() {
           <Link to="/clip">clip</Link>
         </li>
       </ul>
-      <div className="box">
-        宝贝，<span className="emphasis">爱你比心{name}</span>
-      </div>
-      <Element title="hello world">
-        <div>children</div>
-      </Element>
-      <Element title="hello world" />
-      <Clock />
+
+      <ThemeContent.Provider value="dark">
+        <Toolbar />
+        <Content />
+      </ThemeContent.Provider>
     </div>
   );
 }
