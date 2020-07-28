@@ -1,9 +1,9 @@
-const person = {
-  name: 'mm'
+
+function Person(){
 }
 
-function sayName(){
+Person.prototype.name = 'mm';
+Person.prototype.sayName = function(){
   console.log(this.name)
 }
-
-console.log(sayName.bind(person).name)
+const p1 = new Person()
