@@ -1,9 +1,26 @@
 
-function Person(){
+
+function inheritPrototype(subClass, superClass){
+  var prototype = Object.create(superClass.prototype);
+  prototype.constructor = subClass;
+  subClass.prototype = prototype;
 }
 
-Person.prototype.name = 'mm';
+function Person(name){
+  this.name = name
+  this.firends = ['red']
+}
+
 Person.prototype.sayName = function(){
   console.log(this.name)
 }
-const p1 = new Person()
+
+function Boy(name, age){
+  Person.call(this, name)
+  this.age = age
+}
+
+// Boy.prototype = Object.create(Person.prototype)
+// Boy.prototype.constructor = Boy;
+inheritPrototype(Boy, Person)
+

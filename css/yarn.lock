@@ -4059,6 +4059,11 @@ mkdirp@^0.5.1, mkdirp@^0.5.3:
   dependencies:
     minimist "^1.2.5"
 
+mm.util@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/mm.util/-/mm.util-0.0.3.tgz#bb2b0dab1aaeba571d5280cb30abb5edfe248c2c"
+  integrity sha512-gxIqCIl3f+mDVfzd41Kzm9dEfd6QdHgBx3DpGuXiQ3TeCGqnYH7yzplTmjK0C4BR4z8vAiEAA3mqSY97gCwIMQ==
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"

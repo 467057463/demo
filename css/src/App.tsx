@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import routes from './routers';
 
+import mmUtil from 'mm.util';
+console.log(mmUtil);
 function App() {
   return (
     <div className="app">

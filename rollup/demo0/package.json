@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "rollup -cw",
+    "build": "rollup -c",
+    "build:amd": "rollup index.js -o dist.amd.js -f amd -n test",
+    "build:cjs": "rollup index.js -o dist.cjs.js -f cjs -n test",
+    "build:es": "rollup index.js -o dist.es.js -f es -n test",
+    "build:iife": "rollup index.js -o dist.iife.js -f iife -n test",
+    "build:umd": "rollup index.js -o dist.umd.js -f umd -n test",
+    "build:all": "yarn build:amd && yarn build:cjs && yarn build:es && yarn build:iife && yarn build:umd"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-babel": "^5.1.0",
+    "rollup": "^2.23.0"
+  }
+}
