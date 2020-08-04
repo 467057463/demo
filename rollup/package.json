@@ -14,5 +14,10 @@
     "@babel/preset-env": "^7.11.0",
     "@rollup/plugin-babel": "^5.1.0",
     "rollup": "^2.23.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "lodash": "^4.17.19"
   }
 }

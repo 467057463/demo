@@ -1,9 +1,12 @@
 import babel from '@rollup/plugin-babel';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
   input: 'src/index.js',
-  external: [
-    'lodash'
+  external:[
+    'lodash',
+    'jquery'
   ],
   output: [
     {
@@ -25,7 +28,8 @@ export default {
       file: './lib/dist.iife.js',
       name: 'mm',
       globals: {
-        'lodash': '_'
+        'lodash': '_',
+        'jquery': '$'
       }
     },
     {
@@ -33,7 +37,8 @@ export default {
       file: './lib/dist.umd.js',
       name: 'mm',
       globals: {
-        'lodash': '_'
+        'lodash': '_',
+        'jquery': '$'
       }
     },
     {
@@ -42,6 +47,8 @@ export default {
     }
   ],  
   plugins: [
-    babel()
+    commonjs(),
+    nodeResolve(),
+    babel({"babelHelpers": "bundled"})
   ]
 }
