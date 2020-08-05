@@ -17,9 +17,11 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "rollup": "^2.23.0",
+    "rollup-plugin-dts": "^1.4.9",
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.19",
+    "redux": "^4.0.5"
   }
 }
