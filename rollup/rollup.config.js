@@ -2,8 +2,10 @@ import babel from '@rollup/plugin-babel';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 
+const extensions =  ['.js', 'ts'];
+
 export default {
-  input: 'src/index.js',
+  input: 'src/index.ts',
   external:[
     'lodash',
     'jquery'
@@ -45,10 +47,15 @@ export default {
       format: 'system',
       file: './lib/dist.system.js'
     }
-  ],  
+  ], 
+  extensions, 
   plugins: [
     commonjs(),
     nodeResolve(),
-    babel({"babelHelpers": "bundled"})
+    babel({
+      extensions,
+      'exclude': 'node_modules/**',
+      'babelHelpers': 'bundled'
+    })
   ]
 }
