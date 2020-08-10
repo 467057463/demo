@@ -46,6 +46,9 @@ function Home() {
         <li>
           <Link to="/clip">clip</Link>
         </li>
+        <li>
+          <Link to="/autonumeric">autonumeric</Link>
+        </li>
       </ul>
 
       <ThemeContent.Provider value="dark">

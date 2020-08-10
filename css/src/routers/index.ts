@@ -59,6 +59,10 @@ const routes: RouteConfig[] = [
     component: loadable(() => import('@/pages/Gradient'))
   },
   {
+    path: '/autonumeric',
+    component: loadable(() => import('@/pages/Autonumeric'))
+  },
+  {
     path: '*',
     component: loadable(() => import('@/pages/Gradient'))
   }
