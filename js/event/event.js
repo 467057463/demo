@@ -47,10 +47,20 @@
 //   console.log(event)
 // }, false)
 
-document.querySelector('#input').addEventListener('compositionstart', function(event){
-  console.log(event)
-})
+// document.querySelector('#input').addEventListener('compositionstart', function(event){
+//   console.log(event)
+// })
 
-document.addEventListener('contextmenu', function(event){
-  event.preventDefault()
+// document.addEventListener('contextmenu', function(event){
+//   event.preventDefault()
+// }, false)
+
+// window.addEventListener('beforeunload', function(event){
+//   var msg ='fdsafdsfdafdsa'
+//   event.returnValue = msg;
+//   return msg
+// }, false)
+
+document.addEventListener('DOMContentLoaded', function(event){
+  console.log(event)
 }, false)
