@@ -1,12 +1,5 @@
 let promiseCount = 1;
 
-function mockAjax(url, s, callback){
-  setTimeout(()=> {
-    callback(`${url} 异步花费${s}秒`)
-  }, 1000 * s)
-}
-
-
 const isFunction = value => Object.prototype.toString.call(value) === '[object Function]';
 const PENDING = 'pending';
 const FULFILLED = 'fulfilled';
@@ -23,7 +16,27 @@ class MyPromise{
     }
     this.name = `Promise-${promiseCount++}`;
     console.log('[%s]:constructor', this.name)
-    fn(this._resolve.bind(this))
+    fn(this._resolve.bind(this), this._reject.bind(this))
+  }
+
+  then(onFulfilled, onRejected){
+    console.log('[%s]:then', this.name)
+    return new MyPromise((resolve, reject) => {
+      this._handle({
+        onFulfilled: onFulfilled || null,
+        onRejected: onRejected || null,
+        resolve,
+        reject
+      })
+    })
+  }
+
+  catch(onError){
+    return this.then(null, onError)
+  }
+
+  finally(onDone){
+    return this.then(onDone, onDone)
   }
 
   _resolve(value){
@@ -34,15 +47,13 @@ class MyPromise{
     this.callbacks.forEach(callback => this._handle(callback));
   }
 
-  then(onFulfilled){
-    console.log('[%s]:then', this.name)
-    return new MyPromise(resolve => {
-      this._handle({
-        onFulfilled: onFulfilled || null,
-        resolve
-      })
-    })
+  _reject(value){
+    console.log('[%s]:_reject', this.name, 'value=', value)
+    this.state = REJECTED;
+    this.value = value;
+    this.callbacks.forEach(callback => this._handle(callback));
   }
+
 
   _handle(callback){
     console.log('[%s]:_handle', this.name, 'state=', this.state)
@@ -52,29 +63,25 @@ class MyPromise{
       return;
     }
 
-    if(!callback.onFulfilled){
-      callback.resolve(this.value);
+    let cb = this.state === FULFILLED ? callback.onFulfilled : callback.onRejected;
+
+    if(!cb){
+      cb = this.state == FULFILLED ? callback.resolve : callback.reject;
+      cb(this.value)
       return;
     }
 
-    let ret = callback.onFulfilled(this.value);
-    callback.resolve(ret);
+    let ret;
+
+    try{
+      ret = cb(this.value);
+      cb = this.state == FULFILLED ? callback.resolve : callback.reject;
+    }catch(error){
+      ret = error
+      cb = callback.reject;
+    }finally{
+      cb(ret);
+    }
   }
 }
-
-p = new MyPromise((resolve)=>{
-  mockAjax('www.baidu.com', 5, function(value){
-    resolve(value)
-  })
-  // resolve(123)
-})
-// .then((res) => {
-//   console.log('then1', res)
-//   return res + 1;
-// })
-// .then((res) => {
-//   console.log('then1', res)
-//   return res + 1;
-// })
-.then()
 
