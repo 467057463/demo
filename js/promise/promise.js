@@ -27,6 +27,14 @@ class MyPromise{
   }
 
   _resolve(value){
+    if(value && (typeof value === 'object' || typeof value === 'function')){
+      const { then } = value;
+      console.log(value.then)
+      if(typeof then === 'function'){
+        then.call(value, this._resolve.bind(this))
+        return;
+      }
+    }
     console.log('[%s]:_resolve', this.name)
     console.log('[%s]:_resolve', this.name, 'value=', value)
     this.state = FULFILLED;
@@ -38,6 +46,7 @@ class MyPromise{
     console.log('[%s]:then', this.name)
     return new MyPromise(resolve => {
       this._handle({
+        name: this.name,
         onFulfilled: onFulfilled || null,
         resolve
       })
@@ -62,19 +71,29 @@ class MyPromise{
   }
 }
 
+p1 = new MyPromise((resolve) => {
+  mockAjax('google', 2, function(value){
+    resolve(value)
+  })
+})
+
 p = new MyPromise((resolve)=>{
-  mockAjax('www.baidu.com', 5, function(value){
+  mockAjax('www.baidu.com', 1, function(value){
     resolve(value)
   })
   // resolve(123)
+})
+.then((res) => {
+  // console.log('then1', res)
+  // return `前缀：${res}`;
+  return p1
 })
 // .then((res) => {
 //   console.log('then1', res)
 //   return res + 1;
 // })
-// .then((res) => {
-//   console.log('then1', res)
-//   return res + 1;
-// })
-.then()
+.then(res => {
+  console.log(res)
+  return res;
+})
 
