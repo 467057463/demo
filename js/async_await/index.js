@@ -1,11 +1,10 @@
-function foo(){
-  console.log(a)
+{
+  try{
+    throw undefined
+  }catch(a){
+    a = 2;
+    console.log(a)
+  }
 }
 
-function bar(){
-  var b = 3;
-  foo()
-}
-
-var a = 2;
-bar()
+console.log(a)
