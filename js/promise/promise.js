@@ -40,16 +40,17 @@ class MyPromise{
   }
 
   _resolve(value){
+    if(value && (typeof value === 'object' || typeof value === 'function')){
+      const { then } = value;
+      console.log(value.then)
+      if(typeof then === 'function'){
+        then.call(value, this._resolve.bind(this))
+        return;
+      }
+    }
     console.log('[%s]:_resolve', this.name)
     console.log('[%s]:_resolve', this.name, 'value=', value)
     this.state = FULFILLED;
-    this.value = value;
-    this.callbacks.forEach(callback => this._handle(callback));
-  }
-
-  _reject(value){
-    console.log('[%s]:_reject', this.name, 'value=', value)
-    this.state = REJECTED;
     this.value = value;
     this.callbacks.forEach(callback => this._handle(callback));
   }
